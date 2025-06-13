@@ -1,6 +1,6 @@
 # syntax=docker.io/docker/dockerfile:1
 
-FROM node:18-alpine AS base
+FROM node:20-alpine AS base
 
 # Step 1. Rebuild the source code only when needed
 FROM base AS builder
@@ -20,7 +20,7 @@ RUN \
 
 COPY src ./src
 #COPY public ./public
-#COPY next.config.js .
+COPY next.config.ts .
 COPY tsconfig.json .
 
 # Environment variables must be present at build time
@@ -32,7 +32,7 @@ ENV NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE}
 
 # Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line to disable telemetry at build time
-# ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
 
 # Build Next.js based on the preferred package manager
 RUN \
@@ -41,6 +41,8 @@ RUN \
   elif [ -f pnpm-lock.yaml ]; then pnpm build; \
   else npm run build; \
   fi
+
+RUN ls -laR /app
 
 # Note: It is not necessary to add an intermediate step that does a full copy of `node_modules` here
 

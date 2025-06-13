@@ -1,0 +1,20 @@
+.editor {
+    padding: 2em 0;
+    label:not([for]) {
+        font-weight: bold;
+        display: block;
+    }
+
+    input:not([type="checkbox"]), textarea {
+        width: 100%;
+        font: inherit;
+    }
+
+    div {
+        margin-bottom: 2em;
+    }
+
+    textarea {
+        height: 10lh;
+    }
+}

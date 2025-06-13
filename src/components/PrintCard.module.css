@@ -1,0 +1,41 @@
+.card {
+    display: block;
+
+    img {
+        max-width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    figure {
+        figcaption {
+            text-align: center;
+            font-style: italic;
+        }
+
+        margin: 0 auto 0.5lh;
+    }
+}
+
+.dateAndShare {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75em;
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.share a {
+    margin-inline-start: 1em;
+}
+
+.sources, .tags {
+    list-style-type: none;
+
+    li {
+        display: inline;
+        margin-inline-end: 0.5ex;
+    }
+}

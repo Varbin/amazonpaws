@@ -1,0 +1,123 @@
+@import "../resources/fonts/amazon.css";
+@import "@fortawesome/fontawesome-free/css/solid.css";
+
+:root {
+  --dark-blue: #152939;
+  --blue: #1a364c;
+  --gray: #404951;
+  --dark-gray: #131a23;
+  --text: #2f2f2f;
+  --button: #3366ff;
+  --orange: #ff9900;
+  --links: #0066c0;
+  --highlight: #e87825;
+  --alexa: #05a2d4;
+  --white: #ffffff;
+  --font-size: 10pt;
+
+  --scaffold-background: var(--dark-blue);
+  --scaffold-foreground: var(--white);
+
+  --main-foreground: var(--text);
+  --main-background: var(--white);
+}
+
+:root {
+  --element-color: var(--main-foreground);
+  --highlight-background: var(--orange);
+  --highlight-foreground: var(--main-background);
+}
+
+:root {
+  --background: var(--scaffold-background);
+  --foreground: var(--scaffold-foreground);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: var(--font-size)
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Amazon Ember", Helvetica, sans-serif;
+  font-weight: lighter;
+  letter-spacing: -0.01rem;
+  line-height: 2rem;
+  font-size: 1.3rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p, ul, ol {
+  margin-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--links);
+}
+a:active, a:hover {
+  color: var(--highlight);
+}
+
+h1, h2 {
+  font-family: "Amazon Ember Display", Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  padding-bottom: 0.3lh;
+  letter-spacing: -0.028rem;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-family: "Amazon Ember", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.023rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+}
+
+header {}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    padding-right: 2em;
+  }
+
+  padding-right: 4em;
+  color: inherit;
+}
+
+main {
+  background-color: var(--main-background);
+  color: var(--main-foreground);
+}
+
+.frame {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5em 10em;
+}

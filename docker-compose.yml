@@ -1,0 +1,23 @@
+services:
+  amazonpaws:
+    build: .
+    image: "ghcr.io/varbin/amazonpaws:trunk"
+    ports:
+      - "127.0.0.1:3000:3000"
+  mongo:
+    image: mongo
+    ports:
+      - '127.0.0.1:27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - '127.0.0.1:8081:8081'
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_BASICAUTH: false

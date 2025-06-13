@@ -1,0 +1,214 @@
+/** Amazon Ember **/
+@font-face {
+    font-family: 'Amazon Ember';
+    font-weight: normal;
+    src: url('AmazonEmber_W_Rg.woff2');
+}
+@font-face {
+    font-family: 'Amazon Ember';
+    font-weight: normal;
+    font-style: italic;
+    src: url('AmazonEmber_W_RgIt.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember';
+    font-weight: 300;
+    src: url('AmazonEmber_W_Lt.woff2');
+}
+@font-face {
+    font-family: 'Amazon Ember';
+    font-weight: 300;
+    font-style: italic;
+    src: url('AmazonEmber_W_LtIt.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember';
+    font-weight: 700;
+    src: url('AmazonEmber_W_Bd.woff2');
+}
+@font-face {
+    font-family: 'Amazon Ember';
+    font-weight: 700;
+    font-style: italic;
+    src: url('AmazonEmber_W_BdIt.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember';
+    font-weight: 1000;
+    src: url('AmazonEmber_W_He.woff2');
+}
+@font-face {
+    font-family: 'Amazon Ember';
+    font-weight: 1000;
+    src: url('AmazonEmber_W_HeIt.woff2');
+}
+
+/** Amazon Ember Condensed **/
+@font-face {
+    font-family: 'Amazon Ember Condensed';
+    font-weight: normal;
+    src: url('AmazonEmberCd_W_Rg.woff2');
+}
+@font-face {
+    font-family: 'Amazon Ember Condensed';
+    font-weight: normal;
+    font-style: italic;
+    src: url('AmazonEmberCd_W_RgIt.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Condensed';
+    font-weight: 300;
+    src: url('AmazonEmberCd_W_Lt.woff2');
+}
+@font-face {
+    font-family: 'Amazon Ember Condensed';
+    font-weight: 300;
+    font-style: italic;
+    src: url('AmazonEmberCd_W_LtIt.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Condensed';
+    font-weight: 700;
+    src: url('AmazonEmberCd_W_Bd.woff2');
+}
+@font-face {
+    font-family: 'Amazon Ember Condensed';
+    font-weight: 700;
+    font-style: italic;
+    src: url('AmazonEmberCd_W_BdIt.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Condensed';
+    font-weight: 100;
+    src: url('AmazonEmberCd_W_Th.woff2');
+}
+@font-face {
+    font-family: 'Amazon Ember Condensed';
+    font-weight: 100;
+    src: url('AmazonEmberCd_W_ThIt.woff2');
+}
+
+/** Amazon Ember Display **/
+@font-face {
+    font-family: 'Amazon Ember Display';
+    font-weight: normal;
+    src: url('AmazonEmberDisplay_W_Rg.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Display';
+    font-weight: bold;
+    src: url('AmazonEmberDisplay_W_Bd.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Display';
+    font-weight: 1000;
+    src: url('AmazonEmberDisplay_W_He.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Display';
+    font-weight: 300;
+    src: url('AmazonEmberDisplay_W_Lt.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Display';
+    font-weight: 300;
+    src: url('AmazonEmberDisplay_W_Lt.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Display';
+    font-weight: 500;
+    src: url('AmazonEmberDisplay_W_Md.woff2');
+}
+
+/** Amazon Ember Duospace **/
+@font-face {
+    font-family: 'Amazon Ember Duospace';
+    src: url('AmazonEmberDuospace_W_Rg.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Duospace';
+    font-weight: bold;
+    src: url('AmazonEmberDuospace_W_Bd.woff2');
+}
+
+/** Amazon Ember Mono **/
+@font-face {
+    font-family: 'Amazon Ember Mono';
+    src: url('AmazonEmberDuospace_W_Rg.woff2');
+}
+
+@font-face {
+    font-family: 'Amazon Ember Mono';
+    font-weight: bold;
+    src: url('AmazonEmberDuospace_W_Bd.woff2');
+}
+
+/** Bookerly */
+@font-face {
+    font-family: 'Bookerly';
+    src: url('BookerlyLCD_W_Rg.woff2');
+}
+@font-face {
+    font-family: 'Bookerly';
+    font-style: italic;
+    src: url('BookerlyLCD_W_RgIt.woff2');
+}
+
+@font-face {
+    font-family: 'Bookerly';
+    font-weight: bold;
+    src: url('BookerlyLCD_W_Bd.woff2');
+}
+@font-face {
+    font-family: 'Bookerly';
+    font-weight: bold;
+    font-style: italic;
+    src: url('BookerlyLCD_W_BdIt.woff2');
+}
+
+@font-face {
+    font-family: 'Bookerly';
+    font-weight: 300;
+    src: url('BookerlyLCD_W_Lt.woff2');
+}
+@font-face {
+    font-family: 'Bookerly';
+    font-weight: 300;
+    font-style: italic;
+    src: url('BookerlyLCD_W_LtIt.woff2');
+}
+
+/** Bookerly Display */
+@font-face {
+    font-family: 'Bookerly Display';
+    src: url('BookerlyDisplay_W_Rg.woff2');
+}
+@font-face {
+    font-family: 'Bookerly Display';
+    font-style: italic;
+    src: url('BookerlyDisplay_W_It.woff2');
+}
+
+@font-face {
+    font-family: 'Bookerly Display';
+    font-weight: bold;
+    src: url('BookerlyDisplay_W_Bd.woff2');
+}
+@font-face {
+    font-family: 'Bookerly Display';
+    font-weight: bold;
+    font-style: italic;
+    src: url('BookerlyDisplay_W_BdIt.woff2');
+}

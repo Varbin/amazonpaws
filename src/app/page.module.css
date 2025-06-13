@@ -1,0 +1,10 @@
+.top {
+    width: 100vw;
+    background: var(--blue);
+    color: var(--white);
+    display: block;
+    text-decoration: none;
+    font-size: 1.7rem;
+    line-height: 6rem;
+    text-align: center;
+}

@@ -1,0 +1,15 @@
+.auth {
+    padding: 2em 0;
+    label {
+        font-weight: bold;
+        display: block;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    div {
+        margin-bottom: 2em;
+    }
+}

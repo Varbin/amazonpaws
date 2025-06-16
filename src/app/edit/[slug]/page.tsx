@@ -16,7 +16,7 @@ export default async function Page({
         if (!print) {
             return redirect("new")
         }
-        if (print.image?.src.startsWith("s3://")) {
+        if (print.image?.src?.startsWith("s3://")) {
             presigned = await getPreSignedUrl(print.image.src)
         }
     }

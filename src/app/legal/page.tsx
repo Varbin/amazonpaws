@@ -2,6 +2,8 @@ import {SITE_TITLE} from "@/lib/constants";
 import {Metadata} from "next";
 import {legalHtml} from "@/lib/data/legal";
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
     title: `Legal — ${SITE_TITLE}`,
     robots: "noindex, follow"

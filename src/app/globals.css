@@ -20,6 +20,8 @@
 
   --main-foreground: var(--text);
   --main-background: var(--white);
+
+  --side-padding: min(4vw, 4em);
 }
 
 :root {
@@ -96,13 +98,13 @@ body {
 
 header {
   grid-area: header;
-  padding: 0 4em;
+  padding: 0 var(--side-padding);
 }
 
 nav {
   grid-area: nav;
   /*background: var(--blue);*/
-  padding: 1em 4em;
+  padding: 1em var(--side-padding);
   a {
     color: var(--white);
     padding: 1em;

@@ -1,0 +1,61 @@
+services:
+  # Please use 'npm run dev' together with the sample.env instead!
+  #amazonpaws:
+  #  build: .
+  #  image: "ghcr.io/varbin/amazonpaws"
+  #  ports:
+  #    - "127.0.0.1:3000:3000"
+
+  # I just used MongoDB as a simple mostly key-value store...
+  # It might not be the best choice.
+  # If you develop on Windows, please use a Windows-based image or a
+  # "true" docker volume (shared folders apparently do not work).
+  mongo:
+    image: mongo
+
+    ports:
+      - '127.0.0.1:27017:27017'
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+    volumes:
+      - ./volumes/mongodb:/data/db
+
+
+  # Simple web interface for MongoDB - in production please at least enable basic auth!
+  mongo-express:
+    image: mongo-express
+
+    ports:
+      - '127.0.0.1:8080:8081'
+
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_BASICAUTH: false
+
+
+  # Simple S3 compatible storage.
+  # Web interface listens on :9001; you can do little in the web interface anymore.
+  minio:
+    image: quay.io/minio/minio
+
+    ports:
+      - '127.0.0.1:9000:9000'
+      - '127.0.0.1:9001:9001'
+
+    environment:
+      MINIO_ROOT_USER: root
+      MINIO_ROOT_PASSWORD: example
+
+    command:
+      - "server"
+      - "/data"
+      - -console-address
+      - ":9001"
+
+    volumes:
+      - ./volumes/minio:/data

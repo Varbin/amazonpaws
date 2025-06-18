@@ -72,4 +72,4 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 # Note: Don't expose ports here, Compose will handle that for us
 
-CMD ["node", "--enable-source-maps", "server.js"]
+CMD ["node", "server.js"]

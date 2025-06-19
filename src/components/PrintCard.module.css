@@ -50,6 +50,8 @@
 
 .sources, .tags {
     list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
 
     li {
         display: inline;

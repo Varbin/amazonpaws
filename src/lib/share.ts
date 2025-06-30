@@ -1,4 +1,6 @@
-export function shareMastodon(data: ShareData) {
+import {BSKY_ACCOUNT} from "@/lib/constants";
+
+export function share(data: ShareData) {
     const userMastodon = window.prompt("Please enter your Mastodon instance or handle:", localStorage.getItem("mastodon") ?? "");
     if (!userMastodon) return;
     let mastodonUrl: string
@@ -35,6 +37,15 @@ export function shareMastodon(data: ShareData) {
         }
         params["url"] = url;
     }
+    url.search = (new URLSearchParams(params)).toString()
+    window.open(url.toString(), "_blank");
+}
+
+
+export function shareBluesky(data: ShareData) {
+    const url = new URL("https://bsky.app/intent/compose");
+    const params: Record<string, string> = {}
+    params["text"] = `${data.title}: ${data.text}\n\n${data.url} by ${BSKY_ACCOUNT}`
     url.search = (new URLSearchParams(params)).toString()
     window.open(url.toString(), "_blank");
 }

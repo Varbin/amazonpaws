@@ -2,7 +2,7 @@ import { PawPrint } from "@/types/pawPrint";
 import styles from "./PrintCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { Share, ShareMastodon } from "@/components/Share";
+import {Share, ShareBluesky, ShareMastodon} from "@/components/Share";
 import Link from "next/link";
 
 type PawPrintProps = {
@@ -28,6 +28,7 @@ export default function PrintCard({ print }: PawPrintProps) {
                 <p className={styles.share}>
                     <Link href={`/print/${print.id}`}><FontAwesomeIcon icon={faLink} title="Permalink" /></Link>
                     <Share print={print} />
+                    <ShareBluesky print={print} />
                     <ShareMastodon print={print} />
                 </p>
             </div>

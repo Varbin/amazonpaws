@@ -5,8 +5,8 @@ export interface Image {
 }
 
 export interface PawPrint {
-    date: string;
-    id: string;
+    date: string;  // Event date
+    id: string;  // ObjectID
 
     heading: string;
     text: string;
@@ -15,4 +15,11 @@ export interface PawPrint {
 
     sources: string[];
     tags: string[];
+
+    modifiedDate?: string;  // Last edited date.
+}
+
+
+export function PawPrintDate(print: PawPrint) {
+    return new Date(parseInt(print.id.substring(0, 8), 16) * 1000).toISOString();
 }

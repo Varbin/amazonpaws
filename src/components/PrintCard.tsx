@@ -1,4 +1,4 @@
-import { PawPrint } from "@/types/pawPrint";
+import {PawPrint, PawPrintDate} from "@/types/pawPrint";
 import styles from "./PrintCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
@@ -27,8 +27,8 @@ export default function PrintCard({ print }: PawPrintProps) {
     return (
         <article className={styles.card}>
             <div className={styles.dateAndShare}>
-                <p className={styles.date}>{print.date}</p>
-                <p className={styles.share}>
+                <p className={styles.date}>Published <time>{PawPrintDate(print).substring(0, 10)}</time> / Event <time>{print.date}</time></p>
+                <p className={styles.share} aria-label={"Share and link this story"} role={"group"}>
                     <Link href={`/print/${print.id}`}><FontAwesomeIcon icon={faLink} title="Permalink" /></Link>
                     <Share print={print} />
                     <ShareBluesky print={print} />

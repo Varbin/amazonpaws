@@ -38,11 +38,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <a href="#main" className="skip">Skip to main content</a>
         <header>
-          <Link className="logo" href="/">
-            <Image src={amazonpaws} alt="Amazon Logo, but with paws." height="100" />
+          <Link className="logo" href="/" aria-describedby={"title"}>
+            <Image src={amazonpaws} alt="Amazon Logo, but with paws." height="100"/>
             <div>
-              <h1>Amazon Paws</h1>
+              <h1 id={"title"}>Amazon Paws</h1>
               <p style={{margin: 0}}>The paw prints Amazon leaves on the world.</p>
             </div>
           </Link>
@@ -56,8 +57,8 @@ export default function RootLayout({
         <aside>
           This is <strong>not</strong> an official Amazon site! <Link href="/about">Read more...</Link>
         </aside>
-        <main>
-        {children}
+        <main id="main">
+          {children}
         </main>
         <footer>
         </footer>

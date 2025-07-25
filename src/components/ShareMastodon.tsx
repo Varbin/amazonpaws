@@ -1,4 +1,4 @@
-import {PawPrint} from "@/types/pawPrint";
+import {PawPrint} from "@/lib/types/pawPrint";
 import {share} from "@/lib/share";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMastodon} from "@fortawesome/free-brands-svg-icons";

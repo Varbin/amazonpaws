@@ -1,4 +1,4 @@
-import {PawPrint} from "@/types/pawPrint";
+import {PawPrint} from "@/lib/types/pawPrint";
 
 export type EditFormState = {
     pawPrint?: PawPrint;

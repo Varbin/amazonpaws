@@ -1,7 +1,7 @@
 import {Feed, Item} from "feed";
 import {getPrints} from "@/lib/data/index";
 import {preSignedPrints} from "@/lib/data/s3";
-import {PawPrintDate} from "@/types/pawPrint";
+import {PawPrintDate} from "@/lib/types/pawPrint";
 
 const PRINTS = 20;
 

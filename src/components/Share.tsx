@@ -1,6 +1,6 @@
 'use client';
 
-import {PawPrint} from "@/types/pawPrint";
+import {PawPrint} from "@/lib/types/pawPrint";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faShareAlt} from "@fortawesome/free-solid-svg-icons";
 

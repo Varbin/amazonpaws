@@ -1,6 +1,6 @@
 'use server';
 import 'server-only'
-import {PawPrint} from "@/types/pawPrint";
+import {PawPrint} from "@/lib/types/pawPrint";
 import {BSON, MongoClient, ObjectId, WithId} from "mongodb";
 import "../../envConfig"
 import {unstable_cache, unstable_expireTag} from "next/cache";

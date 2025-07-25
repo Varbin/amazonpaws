@@ -1,4 +1,4 @@
-import {PawPrint, PawPrintDate} from "@/types/pawPrint";
+import {PawPrint, PawPrintDate} from "@/lib/types/pawPrint";
 import styles from "./PrintCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";

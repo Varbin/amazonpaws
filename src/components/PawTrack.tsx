@@ -1,6 +1,6 @@
 "use client";
 import styles from "./PawTrack.module.css";
-import {PawPrint} from "@/types/pawPrint";
+import {PawPrint} from "@/lib/types/pawPrint";
 import PrintCard from "./PrintCard";
 import React, {useEffect, useState} from "react";
 import {getPrints} from "@/lib/data";

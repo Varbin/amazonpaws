@@ -11,7 +11,7 @@ import {AwsCredentialIdentity} from "@smithy/types";
 import {unstable_cache} from "next/cache";
 import {URL} from 'node:url';
 import {getSignedUrl} from "@aws-sdk/s3-request-presigner";
-import {PawPrint} from "@/types/pawPrint";
+import {PawPrint} from "@/lib/types/pawPrint";
 import {UPLOAD_TO_S3} from "@/lib/constants";
 
 let _s3: S3Client | undefined = undefined;

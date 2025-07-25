@@ -1,4 +1,4 @@
-import {PawPrint} from "@/types/pawPrint";
+import {PawPrint} from "@/lib/types/pawPrint";
 import {shareBluesky} from "@/lib/share";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBluesky} from "@fortawesome/free-brands-svg-icons";

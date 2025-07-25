@@ -1,7 +1,7 @@
 import {getPrints, getPrintsCount} from "@/lib/data";
 import type {MetadataRoute} from "next";
 import {BASE_URL} from "@/lib/constants";
-import {PawPrintDate} from "@/types/pawPrint";
+import {PawPrintDate} from "@/lib/types/pawPrint";
 
 const elementsPerPage = 50000
 

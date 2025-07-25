@@ -1,5 +1,5 @@
 'use client';
-import {Image as PawImage, PawPrint, PawPrintDate} from "@/types/pawPrint";
+import {Image as PawImage, PawPrint, PawPrintDate} from "@/lib/types/pawPrint";
 import styles from "../page.module.css";
 import { useActionState } from "react";
 import { editOrCreatePrint } from "@/app/edit/actions/editOrCreatePrint";

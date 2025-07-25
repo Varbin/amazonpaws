@@ -1,6 +1,6 @@
 'use server';
 
-import {LoginFormState} from "@/types/loginFormState";
+import {LoginFormState} from "@/lib/types/loginFormState";
 import {createSession} from "@/lib/session";
 import {redirect} from "next/navigation";
 

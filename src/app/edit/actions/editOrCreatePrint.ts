@@ -1,8 +1,8 @@
 'use server';
 
-import {EditFormState} from "@/types/editFormState";
+import {EditFormState} from "@/lib/types/editFormState";
 import {isLoggedIn} from "@/lib/session";
-import {Image, PawPrint} from "@/types/pawPrint";
+import {Image, PawPrint} from "@/lib/types/pawPrint";
 import {insertOrUpdate} from "@/lib/data";
 import {redirect} from "next/navigation";
 import {deleteObject, getPreSignedUrl, upload} from "@/lib/data/s3";

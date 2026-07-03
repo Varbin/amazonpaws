@@ -3,14 +3,17 @@ import styles from "./PrintCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import Share from "@/components/Share";
+//import Share from "@/components/Share";
 import ShareBluesky from "@/components/ShareBluesky";
 import ShareMastodon from "@/components/ShareMastodon";
+import dynamic from "next/dynamic";
 
 
 type PawPrintProps = {
     print: PawPrint;
 }
+
+const Share = dynamic(() => import("./Share"), { ssr: false })
 
 function figure(print: PawPrint) {
     if (print.image?.src) {
@@ -30,9 +33,9 @@ export default function PrintCard({ print }: PawPrintProps) {
                 <p className={styles.date}>Published <time>{PawPrintDate(print).substring(0, 10)}</time> / Event <time>{print.date}</time></p>
                 <p className={styles.share} aria-label={"Share and link this story"} role={"group"}>
                     <Link href={`/print/${print.id}`}><FontAwesomeIcon icon={faLink} title="Permalink" /></Link>
-                    <Share print={print} />
                     <ShareBluesky print={print} />
                     <ShareMastodon print={print} />
+                    <Share print={print} />
                 </p>
             </div>
             <h2>{print.heading}</h2>

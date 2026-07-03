@@ -17,7 +17,7 @@ export async function postOnMastodon(pawPrint: PawPrint): Promise<PostState> {
     // We ignore remove for now.
     let result!: SocialMedia;
     try {
-        result = await postMastodonStatus(pawPrint.id, pawPrint.heading, pawPrint.text, pawPrint.tags, pawPrint.image?.src, pawPrint.image?.alt)
+        result = await postMastodonStatus(pawPrint.id, pawPrint.heading, pawPrint.text, pawPrint.tags, pawPrint.date, pawPrint.image?.src, pawPrint.image?.alt)
     } catch (e) {
         return {
             pawPrint: pawPrint,

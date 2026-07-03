@@ -87,8 +87,8 @@ export async function postMastodonStatus(
     text: string,
     tags: string[] = [],
     postDate: string,
-    attachtment: string|null = null,
-    altText: string|null = null,
+    attachment: string | null = null,
+    altText: string | null = null,
 ): Promise<SocialMedia> {
     const lengths = await getMastodonPostLimit()
 
@@ -111,8 +111,8 @@ export async function postMastodonStatus(
         ["visibility", "direct"]
     ]
 
-    if (attachtment) {
-        const attachmentId = await postMastodonAttachment(attachtment, altText || "")
+    if (attachment) {
+        const attachmentId = await postMastodonAttachment(attachment, altText || "")
         if (attachmentId !== null) {
             data.push(["media_ids[]", attachmentId])
         }

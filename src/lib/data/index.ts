@@ -3,7 +3,7 @@ import 'server-only'
 import {PawPrint} from "@/lib/types/pawPrint";
 import {BSON, MongoClient, ObjectId, WithId} from "mongodb";
 import "../../envConfig"
-import {unstable_cache, unstable_expireTag} from "next/cache";
+import {unstable_cache, updateTag} from "next/cache";
 import {PRINTS_PER_PAGE} from "@/lib/constants";
 
 let _mongo: MongoClient | undefined = undefined;
@@ -53,14 +53,14 @@ export async function insertOrUpdate(print: PawPrint) {
         oid = result.insertedId
     }
     // Expire cache NOW!
-    unstable_expireTag("prints")
+    updateTag("prints")
     return await getPrint(oid.toString())
 }
 
 export async function deletePrint(id: string) {
     const collection = await getCollection()
     await collection.deleteOne({_id: new ObjectId(id)})
-    unstable_expireTag("prints")
+    updateTag("prints")
 }
 
 /**

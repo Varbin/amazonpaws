@@ -1,12 +1,12 @@
 'use server'
 import {redirect} from "next/navigation";
 import {isLoggedIn} from "@/lib/session";
-import {unstable_expireTag} from "next/cache";
+import {updateTag} from "next/cache";
 
 export async function revalidate() {
     if (!(await isLoggedIn())) {
         return redirect('/login')
     }
-    unstable_expireTag("prints");
+    updateTag("prints");
     return redirect("/edit")
 }

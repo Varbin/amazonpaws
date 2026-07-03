@@ -27,6 +27,8 @@ function convert(response: WithId<BSON.Document>): PawPrint {
         sources: response["sources"] || [],
         image: response["image"] || null,
         modifiedDate: response["modifiedDate"],
+        bluesky: response["bluesky"] || null,
+        mastodon: response["mastodon"] || null,
     }
 }
 

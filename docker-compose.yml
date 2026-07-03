@@ -1,37 +1,27 @@
 services:
   amazonpaws:
-    build: .
-    image: "ghcr.io/varbin/amazonpaws:trunk"
-    ports:
-      - "127.0.0.1:3000:3000"
-  mongo:
-    image: mongo
-    ports:
-      - '127.0.0.1:27017:27017'
+    image: "ghcr.io/varbin/amazonpaws"
+    restart: unless-stopped
+    # Uncomment if you use Traeffik.
+    #ports:
+    #- "127.0.0.1:3000:3000"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      # Provide those in an env file!
+      S3_ENDPOINT: "${S3_ENDPOINT}"
+      S3_ACCESS_KEY: "${S3_ACCESS_KEY}"
+      S3_SECRET_KEY: "${S3_SECRET_KEY}"
+      S3_BUCKET: "${S3_BUCKET}"
+      S3_REGION: "${S3_REGION}"
+      S3_PATH_STYLE: "${S3_PATH_STYLE}"
+      AUTH_KEY: "${AUTH_KEY}"
+      SECRET_KEY: "${SECRET_KEY}"
+      MONGO_URL: "${MONGO_URL}"
 
-  mongo-express:
-    image: mongo-express
-    ports:
-      - '127.0.0.1:8081:8081'
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
-      ME_CONFIG_BASICAUTH: false
+      HOSTNAME: '0.0.0.0'
 
-  minio:
-    image: quay.io/minio/minio
-    ports:
-      - '127.0.0.1:9000:9000'
-      - '127.0.0.1:9001:9001'
-    environment:
-      MINIO_ROOT_USER: Cohsaeku3hee
-      MINIO_ROOT_PASSWORD: eaqu5Jeef1ooWue4ohpe0Zei
-    command:
-      - "server"
-      - "/data"
-      - -console-address
-      - ":9001"
+      # Uncomment if you pass your legal details.
+      #LEGAL_FILE: '/legal.html'
+
+    volumes: [
+      #'./legal.html:/legal.html'
+    ]

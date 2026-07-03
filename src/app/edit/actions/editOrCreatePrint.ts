@@ -61,6 +61,9 @@ export async function editOrCreatePrint(state: EditFormState, formData: FormData
             caption: formData.get("caption") as string,
         } as Image;
     }
+    print.mastodon = state.pawPrint?.mastodon;
+    print.bluesky = state.pawPrint?.bluesky;
+
     const needsRedirect = !print["id"];
     const result = await insertOrUpdate(print)
     if (result) {

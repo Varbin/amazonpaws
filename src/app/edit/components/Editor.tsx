@@ -1,8 +1,9 @@
 'use client';
 import {Image as PawImage, PawPrint, PawPrintDate} from "@/lib/types/pawPrint";
 import styles from "../page.module.css";
-import { useActionState } from "react";
+import {useActionState, useState} from "react";
 import { editOrCreatePrint } from "@/app/edit/actions/editOrCreatePrint";
+import {postOnMastodon} from "@/app/edit/actions/postOnMastodon";
 
 type EditorProps = {
     print: PawPrint | undefined;
@@ -25,6 +26,38 @@ function ImageEditor({ image }: { image: PawImage | null | undefined }) {
 function Preview({ src }: { src: string | undefined }) {
     if (src) return <img src={src} alt="" style={{maxHeight: "200px", maxWidth: "100%"}} />
     return <></>
+}
+
+function SocialMediaPost({pawPrint}: {pawPrint?: PawPrint}) {
+    const [mastodon, updateMastodon] = useState(pawPrint?.mastodon)
+    const [pending, updatePending] = useState(false)
+    const [error, updateError] = useState("")
+    if (pawPrint == undefined || !pawPrint?.id) return <></>
+
+    async function post() {
+        updatePending(true)
+        updateError("")
+        const print = await postOnMastodon(pawPrint!)
+        if (print.error) {
+            updateError(print.error)
+        } else {
+            updateError("")
+        }
+        updatePending(false)
+        updateMastodon(print.pawPrint?.mastodon)
+    }
+    return <>
+        <h2>Social Media</h2>
+        <ul>
+            <li>Mastodon:
+        {mastodon ? <><a href={mastodon.url}>{mastodon.id}</a> (Updated: {mastodon.date})</> : <>
+            <button onClick={post}>Post on Mastodon</button>
+        </>}
+            </li>
+        </ul>
+        {pending && <p>Posting...</p>}
+        {error && <p>{error}</p>}
+    </>
 }
 
 export function Editor({ print, preSignedUrl }: EditorProps) {
@@ -72,5 +105,6 @@ export function Editor({ print, preSignedUrl }: EditorProps) {
             {pending && <p>Saving...</p>}
             {state.error && <p>{state.error}</p>}
         </form>
+        <SocialMediaPost pawPrint={state.pawPrint} />
     </>
 }

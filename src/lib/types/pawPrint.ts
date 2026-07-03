@@ -4,6 +4,12 @@ export interface Image {
     caption: string;
 }
 
+export interface SocialMedia {
+    id: string,
+    url: string,
+    date: string,
+}
+
 export interface PawPrint {
     date: string;  // Event date
     id: string;  // ObjectID
@@ -16,7 +22,10 @@ export interface PawPrint {
     sources: string[];
     tags: string[];
 
-    modifiedDate?: string;  // Last edited date.
+    modifiedDate?: string; // Last edited date.
+
+    mastodon?: SocialMedia;
+    bluesky?: SocialMedia;
 }
 
 
